@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- libraries -->
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<script src="js/bootstrap.js"></script>
+<!-- user libraries -->
+<script type="text/javascript" src="js/get_EMSX.js"></script>
+<script type="text/javascript" src="js/sum-table.js"></script>
+<link rel="stylesheet" type="text/css" href="css/holdings.css">
+
+<title>Holdings</title>
+</head>
+<body>
+	<!-- responsive navigation bar -->
+	<nav class="navbar navbar-default">
+		<div id="header" class="container-fluid">
+			<div class="navbar-header">
+				<!-- collapsed button -->
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#3ic-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+				<!-- 3iC logo -->
+				<a class="navbar-brand logo-font" href="http://www.3icgroup.com/">
+					<span>3</span> <span class="logo-font2">i</span> <span>Capital
+						Group</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="3ic-navbar-collapse-1">
+				<!-- left nav menu -->
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Holdings <span
+							class="sr-only">(current)</span></a></li>
+					<li><a href="#">Charts</a></li>
+					<li><a href="#">Other</a></li>
+				</ul>
+				<!-- right nav menu -->
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Info</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Profile <span class="caret"></span></a> <!-- right dropdown menu -->
+						<ul class="dropdown-menu">
+							<li><a href="#">...</a></li>
+							<li><a href="#">...</a></li>
+							<li><a href="#">...</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">...</a></li>
+						</ul></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div id="content-warpper" class="container-fluid ">
+		<div id="holdings-body" class="container-fluid wrapper grid">
+			<br />
+			<br />
+
+			<!-- switch menu and tables -->
+			<div class="row">
+				<ul class="nav nav-tabs">
+					<li id="navtab1" class="active"><a data-toggle="tab"
+						href="#tab1">View All</a></li>
+					<li><a data-toggle="tab" href="#tab2">Roderick</a></li>
+					<li><a data-toggle="tab" href="#tab3">Person 2</a></li>
+					<li><a data-toggle="tab" href="#tab4">Person 3</a></li>
+				</ul>
+				<div class="tab-content">
+
+					<div id="tab1" class="tab-pane fade in active">
+						<div class="row display">
+							<div class="container col-lg-6">
+								<table id="sum_table1" class="table borderless"></table>
+							</div>
+							<div class="switchPaneButtonDiv col-lg-3 col-lg-offset-3">
+								<div class="btn-group" role="group" aria-label="...">
+									<botton class="btn btn-lg btn-default">Print</botton>
+									<botton class="btn btn-lg btn-default">Save</botton>
+									<botton class="btn btn-lg btn-default">Add Portfolio</botton>
+								</div>
+								<botton id="get_data" class="btn btn-lg btn-danger"
+									onclick="refresh()">Refresh</botton>
+							</div>
+
+						</div>
+						<div class="row display">
+							<div class="table-responsive holdings-table">
+								<table id="table_showcase1"></table>
+							</div>
+						</div>
+					</div>
+
+					<div id="tab2" class="tab-pane fade">
+						<div class="row">
+							<div class="container col-lg-6">
+								<table class="table borderless">
+									<tr class=" sum-font1">
+										<td>Total Profit/Loss</td>
+										<td>Today's Gain/Loss</td>
+										<td>Trade Win</td>
+										<td>Trade</td>
+										<td>Commission</td>
+									</tr>
+									<tr>
+										<td class="sum-font2 font-red">$12345.67(12.3%)</td>
+										<td class="sum-font2 font-green">$123.1 (0.3%)</td>
+										<td class="sum-font2">50.2%</td>
+										<td class="sum-font2">12</td>
+										<td class="sum-font2">$500.01</td>
+									</tr>
+								</table>
+							</div>
+							<div class="switchPaneButtonDiv col-lg-3 col-lg-offset-3">
+								<div class="btn-group" role="group" aria-label="...">
+									<botton class="btn btn-lg btn-default">Print</botton>
+									<botton class="btn btn-lg btn-default">Save</botton>
+									<botton class="btn btn-lg btn-default">Add Portfolio</botton>
+								</div>
+								<botton id="get_data" class="btn btn-lg btn-danger"
+									onclick="refresh()">Refresh</botton>
+							</div>
+						</div>
+						<div class="row">
+							<div class="holdings-table">
+								<table id="table_showcase"></table>
+							</div>
+						</div>
+					</div>
+
+					<div id="tab3" class="tab-pane fade">
+						<h4>Person 2</h4>
+						<div class=" table-responsive col-lg-6 ">
+							<table class="table">
+								<tr class=" sum-font1">
+									<td>Total Profit/Loss</td>
+									<td>Today's Gain/Loss</td>
+									<td>Trade Win Percentage</td>
+									<td># of Trade</td>
+									<td>Commission Generated</td>
+								</tr>
+								<tr>
+									<td class="sum-font2 font-red">$1345.67 12.3%</td>
+									<td class="sum-font2 font-green">$23.1 0.3%</td>
+									<td class="sum-font2">5.2%</td>
+									<td class="sum-font2">2</td>
+									<td class="sum-font2">$50.01</td>
+								</tr>
+							</table>
+						</div>
+						<div class="table-responsive row ">
+							<table id="table_showcase3"></table>
+						</div>
+					</div>
+
+					<div id="tab4" class="tab-pane fade">
+						<h4>Person 3</h4>
+						<div class=" table-responsive col-lg-6 ">
+							<table class="table">
+								<tr class=" sum-font1">
+									<td>Total Profit/Loss</td>
+									<td>Today's Gain/Loss</td>
+									<td>Trade Win Percentage</td>
+									<td># of Trade</td>
+									<td>Commission Generated</td>
+								</tr>
+								<tr>
+									<td class="sum-font2 font-red">$245.67 12.3%</td>
+									<td class="sum-font2 font-green">$6123.1 0.3%</td>
+									<td class="sum-font2">8.6%</td>
+									<td class="sum-font2">7</td>
+									<td class="sum-font2">$90.01</td>
+								</tr>
+							</table>
+						</div>
+						<div class="table-responsive row ">
+							<table id="table_showcase4"></table>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<hr>
+
+	</div>
+	<!-- footer -->
+	<div id="footer" class="container-fluid wrapper container ">
+		<hr>
+		<div class="container row ">
+			<div class="col-lg-4 col-lg-offset-4 logo-font">
+				<span>3</span> <span class="logo-font2">i</span> <span>Capital
+					Group</span>
+			</div>
+		</div>
+		<div class=" row ">
+			<!-- link scource -->
+			<div class="col-lg-6 col-lg-offset-3">
+				<ul class="list-inline ">
+					<li class="btn btn-link">link here</li>
+					<li class="btn btn-link">link here</li>
+					<li class="btn btn-link">link here</li>
+					<li class="btn btn-link">link here</li>
+					<li class="btn btn-link">link here</li>
+					<li class="btn btn-link">link here</li>
+					<li class="btn btn-link">link here</li>
+				</ul>
+			</div>
+		</div>
+		<div class=" row ">
+			<div class="col-lg-10 col-lg-offset-1">
+				<p class="notation-font">Lorem Ipsum is simply dummy text of the
+					printing and typesetting industry. Lorem Ipsum has been the
+					industry's standard dummy text ever since the 1500s, when an
+					unknown printer took a galley of type and scrambled it to make a
+					type specimen book. It has survived not only five centuries, but
+					also the leap into electronic typesetting, remaining essentially
+					unchanged. It was popularised in the 1960s with the release of
+					Letraset sheets containing Lorem Ipsum passages, and more recently
+					with desktop publishing software like Aldus PageMaker including
+					versions of Lorem Ipsum.</p>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>

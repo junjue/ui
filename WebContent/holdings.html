@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- jQuery library -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <!-- dataTable library -->
+    <script src="js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.css">
+    <!-- bootstrap library -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <!-- customized library -->
+	<script type="text/javascript" src="js/get_EMSX.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/holdings.css">
+
+    <title>Holdings</title>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div id="header" class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#3ic-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand logo-font" href="http://www.3icgroup.com/">
+                    <span>3</span>
+                    <span class="logo-font2">i</span>
+                    <span>Capital Group</span>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="3ic-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Holdings <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Charts</a></li>
+                    <li><a href="#">Other</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Info</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">...</a></li>
+                            <li><a href="#">...</a></li>
+                            <li><a href="#">...</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">...</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="content-warpper" class="container-fluid ">
+        <div id="holdings-body"class="container-fluid wrapper grid">
+            <div class="row">
+                <div id="holdings-body-sum container" class=" col-lg-3">
+                    <table class="table">
+                        <tr>
+                            <td>Portfolio</td>
+                            <td>Gain/Loss</td>
+                        </tr>
+                        <tr>
+                            <td>$</td>
+                            <td>$</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="holdings-body-button" class="col-lg-3 col-lg-offset-6">
+                    <div class="btn-group" role="group" aria-label="...">
+                        <botton class="btn btn-lg btn-default">Print</botton>
+                        <botton class="btn btn-lg btn-default">Save</botton>
+                        <botton class="btn btn-lg btn-default">Add Portfolio</botton>
+                    </div>
+                    <botton id="get_data" class="btn btn-lg btn-danger">Get Data</botton>
+                </div>
+             </div>
+            <hr>
+            <div class="row">
+                <div id="holdings-body-nav">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a herf="#">View 1</a>
+                        </li>
+                        <li>
+                            <a herf="#">View 2</a>
+                        </li>
+                        <li>
+                            <a herf="#">View 3</a>
+                        </li>
+                        <li>
+                            <a herf="#">View 4</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div >
+                    <div id="holdings-table">
+                        <!--<table class="table">-->
+                            <!--<tr>-->
+                                <!--<th>Ticker</th>-->
+                                <!--<th>Price</th>-->
+                                <!--<th>Change</th>-->
+                                <!--<th>52 Week Range</th>-->
+                                <!--<th>Day Gain/Loss</th>-->
+                                <!--<th>Value</th>-->
+                                <!--<th>Volume</th>-->
+                            <!--</tr>-->
+                            <!--<tr></tr>-->
+                        <!--</table>-->
+                        <table id="table_showcase" class="display"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="container-fluid wrapper container ">
+            <hr>
+            <div class="container row ">
+                <div class="col-lg-4 col-lg-offset-4 logo-font">
+                    <span>3</span>
+                    <span class="logo-font2">i</span>
+                    <span>Capital Group</span>
+                </div>
+            </div>
+            <div class=" row ">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <ul class="list-inline ">
+                        <li class="btn btn-link">link here</li>
+                        <li class="btn btn-link">link here</li>
+                        <li class="btn btn-link">link here</li>
+                        <li class="btn btn-link">link here</li>
+                        <li class="btn btn-link">link here</li>
+                        <li class="btn btn-link">link here</li>
+                        <li class="btn btn-link">link here</li>
+                    </ul>
+                </div>
+            </div>
+            <div class=" row ">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <p class="notation-font">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div>
+            </div>
+    </div>
+    
+    
+    <script type="text/javascript">
+		function Get_OrderBook() {
+	        $.post("Get_OrderBook",{}, function(result) {
+			alert(result);
+			});
+		}
+	</script>
+</body>
+</html>
